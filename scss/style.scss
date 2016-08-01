@@ -1,0 +1,47 @@
+body{
+	background-color: #EEEEEE;
+	padding: 20px;
+}
+#content{
+	text-align: center;
+}
+#logo{
+	display: block;
+	margin: 0 auto;
+}
+#createQ{
+	#newQ{
+		input[type="text"]{
+			min-width: 280px;
+			margin-bottom: 20px;
+		}
+		input[type="radio"]{
+			margin-right: 20px;
+		}
+	}
+	#navigation{
+		margin-top: 20px;
+	}
+	input{
+		display: block;
+		margin: 0 auto;
+	}
+	text-align: center;
+}
+.questionaire{
+	#textQ{
+		font-size: 30px;
+	}
+	#navigation{
+		display: block;
+	}
+	 #stars{
+	 	span{
+	 		outline: none;
+	 	}
+	 	i{
+	 		color: yellow;
+	 		font-size: 30px;
+	 	}
+	 }
+}

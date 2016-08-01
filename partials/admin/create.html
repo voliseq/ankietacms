@@ -1,0 +1,33 @@
+<div id="createQ">
+	<div id="newQ">
+		<label for = "name">Nazwa ankiety </label>
+		<input type="text" name = "name" ng-model="questionaire.name">
+
+		<label for="text">Tekst pytania</label>
+		<input type="text" name="text" ng-model="question.text">
+		<label>
+			<input type="radio" ng-model="question.type" ng-value="0">
+			Gwiazdki
+		</label>
+		<label>
+			<input type="radio" ng-model="question.type" ng-value="1">
+			Tak/Nie
+		</label>
+	</div>
+	<div class="questionaire">
+		<p id="textQ">{{question.text}}</p>
+		<div id="stars"  ng-if="!question.type">
+			<span uib-rating ng-model='rate' max='max' read-only='isReadonly' on-hover='hoveringOver(value)' on-leave='overStar = null' aria-labelledby='default-rating'></span>
+		</div>
+		<div class="buttons" ng-if="question.type">
+			<label class="btn btn-success" value = "0" ng-model="radioModel" uib-btn-radio="'Left'" uncheckable>Tak</label>
+			<label class="btn btn-success" value = "1" ng-model="radioModel" uib-btn-radio="'Right'" uib-uncheckable="uncheckable">Nie</label>
+		</div>
+		<div id="navigation">
+			<button ng-click="previousQ()" class = "btn btn-warning">Poprzednie</button>
+			<button ng-click="nextQ()" class = "btn btn-primary">Nastepne</button>
+			<button ng-click="addQ(question)" class=" btn btn-info">Dodaj</button>
+			<button ng-click="confirm()" style="display: block; margin: 0 auto;" class="btn btn-success">Zatwierdź</button>
+		</div>
+	</div>
+</div>

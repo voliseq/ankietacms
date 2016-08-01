@@ -1,0 +1,36 @@
+body {
+  background-color: #EEEEEE;
+  padding: 20px; }
+
+#content {
+  text-align: center; }
+
+#logo {
+  display: block;
+  margin: 0 auto; }
+
+#createQ {
+  text-align: center; }
+  #createQ #newQ input[type="text"] {
+    min-width: 280px;
+    margin-bottom: 20px; }
+  #createQ #newQ input[type="radio"] {
+    margin-right: 20px; }
+  #createQ #navigation {
+    margin-top: 20px; }
+  #createQ input {
+    display: block;
+    margin: 0 auto; }
+
+.questionaire #textQ {
+  font-size: 30px; }
+
+.questionaire #navigation {
+  display: block; }
+
+.questionaire #stars span {
+  outline: none; }
+
+.questionaire #stars i {
+  color: yellow;
+  font-size: 30px; }

@@ -1,0 +1,25 @@
+[{
+	"text": "Jak oceniasz prace a ?",
+	"type": "0",
+	"vote": "1"
+},{
+	"text": "Jak oceniasz prace b ?",
+	"type": "0",
+	"vote": "1"
+},{
+	"text": "Jak oceniasz prace c ?",
+	"type": "1",
+	"vote": "1"
+},{
+	"text": "Jak oceniasz prace d ?",
+	"type": "0",
+	"vote": "1"
+},{
+	"text": "Jak oceniasz prace e ?",
+	"type": "1",
+	"vote": "1"
+},{
+	"text": "Jak oceniasz prace f ?",
+	"type": "0",
+	"vote": "1"
+}]
