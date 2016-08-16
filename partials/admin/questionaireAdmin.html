@@ -1,10 +1,9 @@
-<div class="questionaire col-xs-12 col-md-6 col-md-offset-3">
-	<img src="img/diamed-logo.png" id="logo">
+<div class="questionaire">
 	<p id="textQ">{{textQ}}</p>
-	<div id="stars" ng-if="!typeQ" ng-click="voteQ()">
+	<div id="stars" ng-if="!typeQ">
  		<span uib-rating ng-model="rating.rate" max="rating.max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
 	</div>
-	<div id="buttons" ng-if="typeQ == 1" ng-click="voteQ()">
+	<div id="buttons" ng-if="typeQ == 1">
         <label class="btn btn-primary" ng-model="rating.rate" uib-btn-radio="1">Tak</label>
         <label class="btn btn-primary" ng-model="rating.rate" uib-btn-radio="0">Nie</label>
 	</div>
@@ -14,10 +13,13 @@
 		<a class="fa fa-meh-o fa-5x" id="neutral" aria-hidden="true" value = "1"></a><!--
 		--><a class="fa fa-frown-o fa-5x" id="sad" aria-hidden="true" value = "0"></a>
 	</div>
-	<div ng-if="!voted" id="navigation" class="row">
-		<button id="prev" ng-if="position" id="previous" ng-click="previousQ()" class = "btn btn-warning">Poprzednie</button>
-		<button id="next" ng-if="nextt" ng-click="nextQ()" class = "btn btn-primary">Nastepne</button>
-		<button id="send" ng-if="!nextt && !voted" ng-click="sendVote()" class="btn btn-success">Wyślij</button>
+	<div id="navigation">
+		<button ng-click="previousQ()" class = "btn btn-warning">Poprzednie</button>
+		<button ng-click="nextQ()" class = "btn btn-primary">Nastepne</button>
 	</div>
-	<h2 id="opinion" ng-if="voted" class="alert alert-success">Dziękujemy za opinię !</h2>
+	<div id="chart" class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
+		<canvas id="bar" class="chart chart-bar" chart-data="chartData" chart-labels="labels" chart-series="series">
+	</canvas>
+	 <p>Ilość gwiazdek</p>
+	</div>
 </div>

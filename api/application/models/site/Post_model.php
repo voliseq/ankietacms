@@ -27,31 +27,38 @@ class Post_model extends CI_Model {
 		$this->db->update('zapytuj_users');
 
 	}
-	public function get($category, $id = false)
+	public function getAll()
 	{
-		if($id == false)
-		{
-			$q = $this->db->get('zapytuj_posts');
-			$q = $q->result();
-		}
-		else
-		{
-			if($id == 1)
-				$offset = 0;
-			else
-				$offset = ($id-1) * 10;
+		$q = $this->db->get('questionaires');
+		$q = $q->result();
+		// if($id == false)
+		// {
 
-			switch($category){
-				case "nowe": {$q = $this->db->order_by('id', 'desc');}
-				case "topka": {$q = $this->db->order_by('votes', 'desc');}
-			}
-			$q = $this->db->get('zapytuj_posts',10,$offset);
-			$q = $q->result();
-		}
+		// }
+		// else
+		// {
+		// 	if($id == 1)
+		// 		$offset = 0;
+		// 	else
+		// 		$offset = ($id-1) * 10;
+
+		// 	switch($category){
+		// 		case "nowe": {$q = $this->db->order_by('id', 'desc');}
+		// 		case "topka": {$q = $this->db->order_by('votes', 'desc');}
+		// 	}
+		// 	$q = $this->db->get('zapytuj_posts',10,$offset);
+		// 	$q = $q->result();
+		// }
 		echo json_encode($q);
 	}
-	public function getOne(){
+	public function getActive(){
 		$this->db->where('active', 1);
+		$q = $this->db->get('questionaires');
+		$q = $q->result();
+		echo json_encode($q);
+		}
+	public function getOne($qId){
+		$this->db->where('id', $qId);
 		$q = $this->db->get('questionaires');
 		$q = $q->result();
 		echo json_encode($q);
@@ -76,62 +83,26 @@ class Post_model extends CI_Model {
 		}
 		echo json_encode($q);
 	}
-	public function update($postId, $ansId, $userId){
+	public function getVotes($idQ){
 
-		$this->db->where('userId', $userId);
-		$this->db->where('postId', $postId);
-		if($this->db->get('zapytuj_votes')->result())
-		{
-			$output['voted'] = true;
-		}
-		else
-		{
-
-			//SELECT CLICKED ANSWER'S POST
-			echo "nie glosowales";
-			$this->db->where('id', $postId);
-			$q = $this->db->get('zapytuj_posts')->result();
-			$q = json_decode(json_encode($q)); 
-			$allVotes = $q[0]->votes;
-			$allVotes++;
-			$answers = json_decode($q[0]->answers);
-			$answers[$ansId]->votes++;
-			$answers = json_encode($answers);
-			print_r($answers);
-
-
-			//UPDATE ANSWER VOUTES COUNT
-			$this->db->set('answers', $answers);
-			$this->db->set('votes', $allVotes);
-			$this->db->where('id',$postId);
-			$this->db->update('zapytuj_posts');
-
-			//INSERT INTO VOTES
-			$this->db->set('userId', $userId);
-			$this->db->set('postId', $postId);
-			$this->db->insert('zapytuj_votes');
-			$output["voted"] = false;
-		}
+		$this->db->where('idQ', $idQ);
+		$q = $this->db->get('votes');
+		$q = $q->result();
+		echo json_encode($q);
+	}
+	public function fakeVote($votes)
+	{
+		$this->db->insert('votes', $votes);
+		$output['success'] = true;
 		return $output;
 	}
-	public function fakeUpdate($ip, $postId)
-	{
-		$this->db->from('zapytuj_fake_votes');
-		$this->db->where('userIp', $ip);
-		$this->db->where('postId', $postId);
-		$q = $this->db->get();
-		if($q->result()){
-			$output['alreadyVoted'] = true;
-		}
-		else{
-			$data = array(
-				'userIp' => $ip,
-				'postId' => $postId
-				);
-			$this->db->insert('zapytuj_fake_votes', $data);
-			$output['alreadyVoted'] = false; 
-		}
-		return $output;
+	public function activate($idQ){
+		$this->db->set('active', 0);
+		$this->db->update('questionaires');
+		$this->db->set('active', 1);
+		$this->db->where('id', $idQ);
+		$this->db->update('questionaires');
+
 	}
 
 

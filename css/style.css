@@ -9,6 +9,42 @@ body {
   display: block;
   margin: 0 auto; }
 
+#navigation {
+  margin-bottom: 50px;
+  position: relative;
+  margin-top: 10px; }
+  #navigation button {
+    width: 100px; }
+  #navigation #prev, #navigation #next {
+    position: absolute; }
+  #navigation #prev {
+    left: calc(50.5% - 105px); }
+  #navigation #next {
+    left: 50.5%; }
+
+#faces a {
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 40px; }
+
+#faces a:last-of-type {
+  margin-right: 0; }
+
+#faces #sad {
+  color: #f14b4b; }
+  #faces #sad:hover {
+    color: #c84646; }
+
+#faces #ok {
+  color: #18c842; }
+  #faces #ok:hover {
+    color: #15b13a; }
+
+#faces #neutral {
+  color: #bebec0; }
+  #faces #neutral:hover {
+    color: #7b7b7c; }
+
 #createQ {
   text-align: center; }
   #createQ #newQ input[type="text"] {
@@ -16,21 +52,57 @@ body {
     margin-bottom: 20px; }
   #createQ #newQ input[type="radio"] {
     margin-right: 20px; }
-  #createQ #navigation {
-    margin-top: 20px; }
+  #createQ .buttons {
+    margin-top: 26px; }
   #createQ input {
     display: block;
     margin: 0 auto; }
 
 .questionaire #textQ {
-  font-size: 30px; }
+  font-size: 26px; }
 
-.questionaire #navigation {
-  display: block; }
+.questionaire #stars {
+  cursor: pointer;
+  font-size: 40px; }
+  .questionaire #stars span {
+    outline: none; }
+  .questionaire #stars i {
+    color: #efb023; }
 
-.questionaire #stars span {
-  outline: none; }
+.questionaire #buttons {
+  padding-top: 5px; }
 
-.questionaire #stars i {
-  color: yellow;
-  font-size: 30px; }
+.questionaire #stars, .questionaire #buttons {
+  height: 50px; }
+
+.questionaire #chart {
+  margin-top: 50px; }
+
+.questionaire-item {
+  position: relative;
+  margin-bottom: 50px;
+  height: 200px; }
+  .questionaire-item .item-container {
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px; }
+  .questionaire-item #name {
+    word-break: break-word;
+    height: 40px;
+    padding-bottom: 100px; }
+  .questionaire-item #active {
+    top: 90px;
+    left: 95px;
+    position: absolute; }
+
+@media (max-width: 640px) {
+  #logo {
+    width: 260px; } }
+
+@media (max-width: 420px) {
+  #logo {
+    width: 220px; }
+  .questionaire #textQ {
+    font-size: 22px; }
+  .questionaire #stars {
+    font-size: 30px; } }

@@ -2,8 +2,9 @@ var mainCtrl = app.controller('createCtrl', ['$scope','$compile','$http','checkT
 	$scope.position = 0;
 	$scope.question = {
 		text: '',
-		type: 1
+		type: 0
 	};
+	$scope.success = false;
 	$scope.questionaire = {name: '', questions: [], active: 0};
 	$scope.confirm = function()
 	{	
@@ -13,12 +14,8 @@ var mainCtrl = app.controller('createCtrl', ['$scope','$compile','$http','checkT
 			questionaire: $scope.questionaire,
 			questions: $scope.questions,
 			token: checkToken.raw()
-		}).success(function(errors){
-			$scope.errors = errors;
-			if(!errors)
-			{
-				$scope.success = true;
-			}
+		}).success(function(data){
+			$scope.success = true;
 		}).error(function(){
 			
 		});
@@ -28,14 +25,19 @@ var mainCtrl = app.controller('createCtrl', ['$scope','$compile','$http','checkT
 
 	$scope.nextQ = function(){
 		if($scope.questionaire.questions[$scope.position] === undefined){
-			console.log('undefined');
 			return;
 		}
 		$scope.position+=1;
-		$scope.question = {
-		text: '',
-		type: 1
-	};
+
+		if($scope.questionaire.questions[$scope.position] === undefined){
+			$scope.question = {
+				text: '',
+				type: 0
+			};
+		}
+		else
+			$scope.question = $scope.questionaire.questions[$scope.position];
+
 
 	}
 	$scope.previousQ = function(){
@@ -51,9 +53,9 @@ var mainCtrl = app.controller('createCtrl', ['$scope','$compile','$http','checkT
 	}
 
 	// angular ui
-	 
+
 	$scope.rate = 0;
-	$scope.max = 10;
+	$scope.max = 5;
 	$scope.isReadonly = false;
 
 	$scope.hoveringOver = function(value) {

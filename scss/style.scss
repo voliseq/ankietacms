@@ -9,6 +9,57 @@ body{
 	display: block;
 	margin: 0 auto;
 }
+
+//create questionaire
+
+
+#navigation{
+	margin-bottom: 50px;
+	position: relative;
+	button{
+		width: 100px;
+	}
+	#prev, #next{
+		position: absolute;
+	}
+	#prev{
+		left: calc(50.5% - 105px);
+	}
+	#next{
+		left: 50.5%;
+	}
+	margin-top: 10px;
+}
+#faces{
+	a{
+		cursor: pointer;
+		text-decoration: none;
+		margin-right: 40px;
+	}
+	a:last-of-type{
+		margin-right: 0;
+	}
+	#sad{
+		color: #f14b4b;
+		&:hover{
+			color: #c84646
+		}
+
+	}
+
+	#ok{
+		color: #18c842;
+		&:hover{
+			color: #15b13a;
+		}
+	}
+	#neutral{
+		color: #bebec0;
+		&:hover{
+			color: #7b7b7c;
+		}
+	}
+}
 #createQ{
 	#newQ{
 		input[type="text"]{
@@ -19,8 +70,8 @@ body{
 			margin-right: 20px;
 		}
 	}
-	#navigation{
-		margin-top: 20px;
+	.buttons{
+		margin-top: 26px;
 	}
 	input{
 		display: block;
@@ -28,20 +79,80 @@ body{
 	}
 	text-align: center;
 }
+
+// questionaire
+
 .questionaire{
 	#textQ{
-		font-size: 30px;
+		font-size: 26px;
 	}
-	#navigation{
-		display: block;
+	#stars{
+		cursor: pointer;
+		font-size: 40px;
+		span{
+			outline: none;
+		}
+		i{
+			color: #efb023;
+		}
 	}
-	 #stars{
-	 	span{
-	 		outline: none;
-	 	}
-	 	i{
-	 		color: yellow;
-	 		font-size: 30px;
-	 	}
+	#buttons{
+		padding-top: 5px;
+	}
+	#stars, #buttons{
+		height: 50px;
+	}
+
+	 //admin
+
+	 #chart{
+	 	margin-top: 50px;
 	 }
-}
+
+	}
+
+	.questionaire-item{
+		position: relative;
+		margin-bottom: 50px;
+		.item-container{
+			padding: 20px;
+			border: 2px solid black;
+			border-radius: 10px;
+		}
+
+		#name{
+			word-break: break-word;
+			height: 40px;
+			padding-bottom: 100px;
+		}
+		#active{
+
+			top: 90px;
+			left: 95px;
+			position: absolute;
+		}
+
+		height: 200px; 
+	}
+
+	@media(max-width: 640px){
+		#logo{
+			width: 260px;
+		}
+	}
+
+	@media (max-width: 420px){
+		#logo{
+			width: 220px;
+		}
+		.questionaire{
+			#textQ{
+				font-size: 22px;
+			}
+			#stars{
+				font-size: 30px;
+			}
+		}
+	}
+
+

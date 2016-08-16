@@ -1,17 +1,23 @@
+<form ng-submit="confirm()">
 <div id="createQ">
 	<div id="newQ">
+		<i class="fa fa-check" ng-if="added[position]" aria-hidden="true"></i>
 		<label for = "name">Nazwa ankiety </label>
-		<input type="text" name = "name" ng-model="questionaire.name">
+		<input type="text" name = "name" required ng-model="questionaire.name">
 
 		<label for="text">Tekst pytania</label>
-		<input type="text" name="text" ng-model="question.text">
+		<input type="text" name="text" required ng-model="question.text">
 		<label>
-			<input type="radio" ng-model="question.type" ng-value="0">
+		<input type="radio" ng-model="question.type" ng-value="0">
 			Gwiazdki
 		</label>
 		<label>
 			<input type="radio" ng-model="question.type" ng-value="1">
 			Tak/Nie
+		</label>
+		<label>
+			<input type="radio" ng-model="question.type" ng-value="2">
+			Buźki
 		</label>
 	</div>
 	<div class="questionaire">
@@ -19,15 +25,24 @@
 		<div id="stars"  ng-if="!question.type">
 			<span uib-rating ng-model='rate' max='max' read-only='isReadonly' on-hover='hoveringOver(value)' on-leave='overStar = null' aria-labelledby='default-rating'></span>
 		</div>
-		<div class="buttons" ng-if="question.type">
-			<label class="btn btn-success" value = "0" ng-model="radioModel" uib-btn-radio="'Left'" uncheckable>Tak</label>
-			<label class="btn btn-success" value = "1" ng-model="radioModel" uib-btn-radio="'Right'" uib-uncheckable="uncheckable">Nie</label>
+		<div class="buttons" ng-if="question.type == 1">
+			<label class="btn btn-primary" value = "0" ng-model="radioModel" uib-btn-radio="'Left'" uncheckable>Tak</label>
+			<label class="btn btn-primary" value = "1" ng-model="radioModel" uib-btn-radio="'Right'" uib-uncheckable="uncheckable">Nie</label>
 		</div>
-		<div id="navigation">
-			<button ng-click="previousQ()" class = "btn btn-warning">Poprzednie</button>
-			<button ng-click="nextQ()" class = "btn btn-primary">Nastepne</button>
-			<button ng-click="addQ(question)" class=" btn btn-info">Dodaj</button>
-			<button ng-click="confirm()" style="display: block; margin: 0 auto;" class="btn btn-success">Zatwierdź</button>
+		<div id="faces" ng-if="question.type == 2">
+			<a class="fa fa-smile-o fa-5x" id="ok" aria-hidden="true" value = "2"></a><!--
+			--><a class="fa fa-meh-o fa-5x" id="neutral" aria-hidden="true" value = "1"></a><!--
+			--><a class="fa fa-frown-o fa-5x" id="sad" aria-hidden="true" value = "0"></a>
+		</div>
+		<div id="navigation" class="row">
+			<button type="button" id="prev" ng-click="previousQ()" class = "btn btn-warning">Poprzednie</button>
+			<button type="button" id="next" ng-click="nextQ()" class = "btn btn-primary">Nastepne</button>
 		</div>
 	</div>
+	<div class="row" id="addQ">
+		<button type="button" ng-click="addQ(question)"class=" btn btn-info">Dodaj / Nadpisz</button>
+		<button class="btn btn-success">Zatwierdź</button>
+	</div>
+	<h2 class="alert alert-success" ng-if="success">Dodano Ankiete !</h2>
 </div>
+</form>

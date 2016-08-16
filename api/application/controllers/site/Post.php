@@ -84,33 +84,43 @@ public function createComment(){
 	}
 	
 }
-public function update()
+public function vote()
 {
-		$postId = $this->input->post('postId');
-		$ansId = $this->input->post('ansId');
+		$idQ = $this->input->post('idQ');
+		$votes = $this->input>post('votes');
 		$token = $this->input->post('token');
 		$token = $this->jwt->decode($token, config_item('encryption_key'));
 		$token = json_decode(json_encode($token), true);
 		$userId = $token['userId'];
 
-		$output = $this->Post_model->update($postId, $ansId, $userId);
+		$output = $this->Post_model->update($idQ, $userId);
 
 
 		echo json_encode($output);	
 }
 public function fakeUpdate()
 {
-		$ip = $this->input->ip_address();
-		$postId = $this->input->post('postId');
-		$output = $this->Post_model->fakeUpdate($ip, $postId);
+		$votes = $this->input->post('votes');
+		$output = $this->Post_model->fakeVote($votes);
 		echo json_encode($output);
 
 }
-public function get()
+public function getActive()
 {
-	$output = $this->Post_model->getOne();
+	$output = $this->Post_model->getActive();
 }
-	public function getUserPosts(){ // fetches USER's posts
+public function activate($idQ){
+	$output = $this->Post_model->activate($idQ);
+}
+public function getAll()
+{
+	$output = $this->Post_model->getAll();
+}
+public function getOne($qId)
+{
+	$output = $this->Post_model->getOne($qId);
+}
+public function getUserPosts(){ // fetches USER's posts
 		$userId = $this->input->post('userId');
 		$id = $this->input->post('id');
 		$output = $this->Post_model->getUserPosts($userId, $id);
@@ -126,6 +136,10 @@ public function getAmount($userId = false)
 			$this->db->from('zapytuj_posts');
 			echo $this->db->count_all_results();
 		}
+	}
+public function getVotes($idQ)
+	{
+		$output = $this->Post_model->getVotes($idQ);
 	}
 }
 

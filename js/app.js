@@ -1,1 +1,1 @@
-var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'angular-storage', 'angular-jwt', 'ngAnimate', 'ngTouch']);
+var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'angular-storage', 'angular-jwt', 'ngAnimate', 'ngTouch', 'chart.js']);
