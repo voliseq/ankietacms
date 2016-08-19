@@ -1,0 +1,19 @@
+#createQ{
+	#newQ{
+		input[type="text"]{
+			min-width: 280px;
+			margin-bottom: 20px;
+		}
+		input[type="radio"]{
+			margin-right: 20px;
+		}
+	}
+	.buttons{
+		margin-top: 26px;
+	}
+	input{
+		display: block;
+		margin: 0 auto;
+	}
+	text-align: center;
+}

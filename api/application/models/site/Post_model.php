@@ -57,6 +57,18 @@ class Post_model extends CI_Model {
 		$q = $q->result();
 		echo json_encode($q);
 		}
+	public function activate($idQ){
+		$this->db->set('active', 0);
+		$this->db->update('questionaires');
+		$this->db->set('active', 1);
+		$this->db->where('id', $idQ);
+		$this->db->update('questionaires');
+
+	}
+	public function delete($idQ){
+		$this->db->where('id', $idQ);
+		$this->db->delete('questionaires');
+	}
 	public function getOne($qId){
 		$this->db->where('id', $qId);
 		$q = $this->db->get('questionaires');
@@ -96,14 +108,7 @@ class Post_model extends CI_Model {
 		$output['success'] = true;
 		return $output;
 	}
-	public function activate($idQ){
-		$this->db->set('active', 0);
-		$this->db->update('questionaires');
-		$this->db->set('active', 1);
-		$this->db->where('id', $idQ);
-		$this->db->update('questionaires');
 
-	}
 
 
 

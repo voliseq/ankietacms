@@ -1,0 +1,30 @@
+#faces{
+	a{
+		cursor: pointer;
+		text-decoration: none;
+		margin-right: 40px;
+	}
+	a:last-of-type{
+		margin-right: 0;
+	}
+	#sad{
+		color: #f14b4b;
+		&:hover{
+			color: #c84646
+		}
+
+	}
+
+	#ok{
+		color: #18c842;
+		&:hover{
+			color: #15b13a;
+		}
+	}
+	#neutral{
+		color: #bebec0;
+		&:hover{
+			color: #7b7b7c;
+		}
+	}
+}

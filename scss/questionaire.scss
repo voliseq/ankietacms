@@ -1,0 +1,38 @@
+.questionaire{
+	#textQ{
+		font-size: 26px;
+	}
+	#stars{
+		cursor: pointer;
+		font-size: 40px;
+		span{
+			outline: none;
+		}
+		i{
+			color: #efb023;
+		}
+	}
+	#buttons{
+		padding-top: 5px;
+	}
+	#stars, #buttons{
+		height: 50px;
+	}
+
+	 //admin
+
+	 #chart{
+	 	margin-top: 50px;
+	 }
+
+	}
+	@media (max-width: 640px){
+		.questionaire{
+			#textQ{
+				font-size: 22px;
+			}
+			#stars{
+				font-size: 30px;
+			}
+		}
+	}

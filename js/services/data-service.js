@@ -18,4 +18,7 @@ app.service('dataService', ['$http', function($http) {
    this.activate = function(id){
     return $http.get('api/site/post/activate/' + id);
   };
+  this.deleteQ = function(id){
+    return $http.get('api/site/post/delete/' +id);
+  }
 }]);

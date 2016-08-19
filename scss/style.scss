@@ -1,5 +1,16 @@
+$whiteText: #eeeeee;
+
+@import 'questionaires';
+@import 'navbar';
+@import 'faces';
+@import 'create';
+@import 'questionaire';
+@import 'navigation';
+
+//general
+
 body{
-	background-color: #EEEEEE;
+	background-color: #95a3b3;
 	padding: 20px;
 }
 #content{
@@ -8,151 +19,29 @@ body{
 #logo{
 	display: block;
 	margin: 0 auto;
+} 
+h1,h2,h3,h4,h5,a{
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
-//create questionaire
-
-
-#navigation{
-	margin-bottom: 50px;
-	position: relative;
-	button{
-		width: 100px;
-	}
-	#prev, #next{
-		position: absolute;
-	}
-	#prev{
-		left: calc(50.5% - 105px);
-	}
-	#next{
-		left: 50.5%;
-	}
-	margin-top: 10px;
-}
-#faces{
-	a{
-		cursor: pointer;
-		text-decoration: none;
-		margin-right: 40px;
-	}
-	a:last-of-type{
-		margin-right: 0;
-	}
-	#sad{
-		color: #f14b4b;
-		&:hover{
-			color: #c84646
-		}
-
-	}
-
-	#ok{
-		color: #18c842;
-		&:hover{
-			color: #15b13a;
-		}
-	}
-	#neutral{
-		color: #bebec0;
-		&:hover{
-			color: #7b7b7c;
-		}
+@media(max-width: 640px){
+	#logo{
+		width: 260px;
 	}
 }
-#createQ{
-	#newQ{
-		input[type="text"]{
-			min-width: 280px;
-			margin-bottom: 20px;
-		}
-		input[type="radio"]{
-			margin-right: 20px;
-		}
+
+@media (max-width: 420px){
+	#logo{
+		width: 220px;
 	}
-	.buttons{
-		margin-top: 26px;
-	}
-	input{
-		display: block;
-		margin: 0 auto;
-	}
-	text-align: center;
+
 }
 
-// questionaire
+//buttons
 
-.questionaire{
-	#textQ{
-		font-size: 26px;
-	}
-	#stars{
-		cursor: pointer;
-		font-size: 40px;
-		span{
-			outline: none;
-		}
-		i{
-			color: #efb023;
-		}
-	}
-	#buttons{
-		padding-top: 5px;
-	}
-	#stars, #buttons{
-		height: 50px;
-	}
-
-	 //admin
-
-	 #chart{
-	 	margin-top: 50px;
-	 }
-
-	}
-
-	.questionaire-item{
-		position: relative;
-		margin-bottom: 50px;
-		.item-container{
-			padding: 20px;
-			border: 2px solid black;
-			border-radius: 10px;
-		}
-
-		#name{
-			word-break: break-word;
-			height: 40px;
-			padding-bottom: 100px;
-		}
-		#active{
-
-			top: 90px;
-			left: 95px;
-			position: absolute;
-		}
-
-		height: 200px; 
-	}
-
-	@media(max-width: 640px){
-		#logo{
-			width: 260px;
-		}
-	}
-
-	@media (max-width: 420px){
-		#logo{
-			width: 220px;
-		}
-		.questionaire{
-			#textQ{
-				font-size: 22px;
-			}
-			#stars{
-				font-size: 30px;
-			}
-		}
-	}
-
-
+.btn.btn-active-q{
+	box-sizing: border-box;
+	background-color: #eeeeee;
+	color: #00bb59;
+	border: 1px solid #00bb59;
+}

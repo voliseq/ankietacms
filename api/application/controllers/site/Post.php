@@ -112,6 +112,9 @@ public function getActive()
 public function activate($idQ){
 	$output = $this->Post_model->activate($idQ);
 }
+public function delete($idQ){
+	$output = $this->Post_model->delete($idQ);
+}
 public function getAll()
 {
 	$output = $this->Post_model->getAll();
@@ -126,17 +129,6 @@ public function getUserPosts(){ // fetches USER's posts
 		$output = $this->Post_model->getUserPosts($userId, $id);
 }
 
-
-public function getAmount($userId = false)
-	{
-		if(!$userId)
-		    echo $this->db->count_all('zapytuj_posts');
-		else{
-			$this->db->like('userId', $userId);
-			$this->db->from('zapytuj_posts');
-			echo $this->db->count_all_results();
-		}
-	}
 public function getVotes($idQ)
 	{
 		$output = $this->Post_model->getVotes($idQ);

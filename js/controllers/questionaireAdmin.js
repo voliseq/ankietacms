@@ -10,7 +10,6 @@ var questionaireAdminCtrl = app.controller('questionaireAdminCtrl', ['$scope','$
 	var amount = $scope.questions.length;
 
 	$scope.typeQ = parseInt($scope.questions[0].type);
-	console.log($scope.typeQ);
 	$scope.textQ = $scope.questions[0].text;
 	$scope.nameQ = $scope.questionaire.name;
 	$scope.rating = {

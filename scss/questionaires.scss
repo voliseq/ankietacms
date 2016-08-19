@@ -1,0 +1,32 @@
+	.questionaire-item{
+		padding: 0 7.5px !important;
+		position: relative;
+		margin-bottom: 15px;
+		.item-container{
+			background-color: #eeeeee;
+			padding: 20px;
+			border-radius: 10px;
+			#first-row{
+				margin-bottom: 20px;
+			}
+			#name{
+				word-break: break-word;
+				padding-bottom: 35px;
+			}
+			button, a{
+				width: 90px;
+			}
+			.button-row{
+				a:first-of-type, button:first-of-type{
+					margin-right: 15px;
+				}
+			}
+		}
+
+		#active{
+
+			top: 90px;
+			left: 95px;
+			position: absolute;
+		}
+	}

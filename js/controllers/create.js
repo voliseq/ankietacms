@@ -8,8 +8,9 @@ var mainCtrl = app.controller('createCtrl', ['$scope','$compile','$http','checkT
 	$scope.questionaire = {name: '', questions: [], active: 0};
 	$scope.confirm = function()
 	{	
+		if($scope.success)
+			$scope.questionaire.questions = JSON.parse($scope.questionaire.questions);
 		$scope.questionaire.questions = JSON.stringify($scope.questionaire.questions);
-		console.log($scope.questionaire);
 		$http.post('api/site/post/create/',{
 			questionaire: $scope.questionaire,
 			questions: $scope.questions,

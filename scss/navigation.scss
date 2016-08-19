@@ -1,0 +1,17 @@
+#navigation{
+	margin-bottom: 50px;
+	position: relative;
+	button{
+		width: 100px;
+	}
+	#prev, #next{
+		position: absolute;
+	}
+	#prev{
+		left: calc(50.5% - 105px);
+	}
+	#next{
+		left: 50.5%;
+	}
+	margin-top: 10px;
+}
