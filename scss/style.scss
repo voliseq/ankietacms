@@ -1,5 +1,13 @@
+$darkText: #373b3f;
 $whiteText: #eeeeee;
-
+$whiteBg: #eeeeee;
+$bodyBg: #95a3b3;
+$sadFace: #f14b4b;
+$sadFaceHover: #d43232;
+$neutralFace: #bebec0;
+$neutralFaceHover: #7b7b7c;
+$okFace: #18c842;
+$okFaceHover: #15b13a;
 @import 'questionaires';
 @import 'navbar';
 @import 'faces';
@@ -10,16 +18,13 @@ $whiteText: #eeeeee;
 //general
 
 body{
-	background-color: #95a3b3;
+	background-color: $bodyBg;
 	padding: 20px;
-}
-#content{
-	text-align: center;
 }
 #logo{
 	display: block;
 	margin: 0 auto;
-} 
+}
 h1,h2,h3,h4,h5,a{
 	font-family: 'Source Sans Pro', sans-serif;
 }
@@ -44,4 +49,10 @@ h1,h2,h3,h4,h5,a{
 	background-color: #eeeeee;
 	color: #00bb59;
 	border: 1px solid #00bb59;
+}
+.btn.btn-next-q{
+	box-sizing: border-box;
+	background-color: #eeeeee;
+	color: #00bb59;
+	border: 1px solid #007fba;
 }

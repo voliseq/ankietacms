@@ -1,48 +1,50 @@
 <form ng-submit="confirm()">
-<div id="createQ">
-	<div id="newQ">
-		<i class="fa fa-check" ng-if="added[position]" aria-hidden="true"></i>
-		<label for = "name">Nazwa ankiety </label>
-		<input type="text" name = "name" required ng-model="questionaire.name">
+	<div id="createQ">
+		<div class="row">
+			<div id="newQ" class="col-md-4">
+				<i class="fa fa-check" ng-if="added[position]" aria-hidden="true"></i>
+				<label for = "name">Nazwa ankiety </label>
+				<input type="text" name = "name" required ng-model="questionaire.name">
+				<label for="text">Tekst pytania</label>
+				<input type="text" name="text" required ng-model="question.text">
+				<label class="question-type" id="label-left" ><input type="radio" ng-model="question.type" ng-value="0">Gwiazdki</label>
+				<label class="question-type" id="label-middle">
+					<input type="radio" ng-model="question.type" ng-value="1">Tak/Nie
+				</label>
+				<label class="question-type" id="label-right"><input type="radio" ng-model="question.type" ng-value="2">Buźki</label>
+				<div class="row" id="addBtn">
+					<button type="button" ng-click="addQ(question)"class=" btn btn-info">Dodaj</button>
+				</div>
+				<div class="questionaire">
+					<p id="textQ">{{question.text}}</p>
+					<div class="type-container">
+						<stars class="type" ng-if="question.type == 0"></stars>
+						<buttonki class="type" ng-if="question.type == 1" ></buttonki>
+						<faces class="type" ng-if="question.type == 2" ></faces>	
+					</div>
+				</div>
 
-		<label for="text">Tekst pytania</label>
-		<input type="text" name="text" required ng-model="question.text">
-		<label>
-		<input type="radio" ng-model="question.type" ng-value="0">
-			Gwiazdki
-		</label>
-		<label>
-			<input type="radio" ng-model="question.type" ng-value="1">
-			Tak/Nie
-		</label>
-		<label>
-			<input type="radio" ng-model="question.type" ng-value="2">
-			Buźki
-		</label>
+				<div id="navigation" class="row">
+					<button type="button" id="prev" ng-click="previousQ()" class = "btn btn-warning">Poprzednie</button>
+					<button type="button" id="next" ng-click="nextQ()" class = "btn btn-primary">Nastepne</button>
+				</div>
+				<div class="row" id="addQ">
+					<button class="btn btn-success">Zatwierdź</button>
+					<button class="btn btn-danger">Usuń</button>
+				</div>
+			</div>
+			<div id="preview" class="col-md-8">
+				<div class="col-md-6 preview-container" ng-repeat = "q in questionaire.questions track by $index">
+					<div class="questionaire" ng-click="setPosition($index)" >
+						<p id="textQ">{{q.text}}</p>
+						<stars class="type" ng-if="q.type == 0"></stars>
+						<faces class="type" ng-if="q.type == 2"></faces>
+						<buttonki class="type" ng-if="q.type == 1"></buttonki>
+						<button class="btn btn-danger">Usuń</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h2 class="alert alert-success" ng-if="success">Dodano Ankiete !</h2>
 	</div>
-	<div class="questionaire">
-		<p id="textQ">{{question.text}}</p>
-		<div id="stars"  ng-if="!question.type">
-			<span uib-rating ng-model='rate' max='max' read-only='isReadonly' on-hover='hoveringOver(value)' on-leave='overStar = null' aria-labelledby='default-rating'></span>
-		</div>
-		<div class="buttons" ng-if="question.type == 1">
-			<label class="btn btn-primary" value = "0" ng-model="radioModel" uib-btn-radio="'Left'" uncheckable>Tak</label>
-			<label class="btn btn-primary" value = "1" ng-model="radioModel" uib-btn-radio="'Right'" uib-uncheckable="uncheckable">Nie</label>
-		</div>
-		<div id="faces" ng-if="question.type == 2">
-			<a class="fa fa-smile-o fa-5x" id="ok" aria-hidden="true" value = "2"></a><!--
-			--><a class="fa fa-meh-o fa-5x" id="neutral" aria-hidden="true" value = "1"></a><!--
-			--><a class="fa fa-frown-o fa-5x" id="sad" aria-hidden="true" value = "0"></a>
-		</div>
-		<div id="navigation" class="row">
-			<button type="button" id="prev" ng-click="previousQ()" class = "btn btn-warning">Poprzednie</button>
-			<button type="button" id="next" ng-click="nextQ()" class = "btn btn-primary">Nastepne</button>
-		</div>
-	</div>
-	<div class="row" id="addQ">
-		<button type="button" ng-click="addQ(question)"class=" btn btn-info">Dodaj / Nadpisz</button>
-		<button class="btn btn-success">Zatwierdź</button>
-	</div>
-	<h2 class="alert alert-success" ng-if="success">Dodano Ankiete !</h2>
-</div>
 </form>

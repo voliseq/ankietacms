@@ -9,12 +9,16 @@
     .questionaire-item .item-container #first-row {
       margin-bottom: 20px; }
     .questionaire-item .item-container #name {
+      margin-top: 5px;
+      text-align: center;
       word-break: break-word;
       padding-bottom: 35px; }
     .questionaire-item .item-container button, .questionaire-item .item-container a {
       width: 90px; }
-    .questionaire-item .item-container .button-row a:first-of-type, .questionaire-item .item-container .button-row button:first-of-type {
-      margin-right: 15px; }
+    .questionaire-item .item-container .button-row {
+      text-align: center; }
+      .questionaire-item .item-container .button-row a:first-of-type, .questionaire-item .item-container .button-row button:first-of-type {
+        margin-right: 15px; }
   .questionaire-item #active {
     top: 90px;
     left: 95px;
@@ -48,7 +52,7 @@
 #faces #sad {
   color: #f14b4b; }
   #faces #sad:hover {
-    color: #c84646; }
+    color: #d43232; }
 
 #faces #ok {
   color: #18c842; }
@@ -61,19 +65,91 @@
     color: #7b7b7c; }
 
 #createQ {
-  text-align: center; }
-  #createQ #newQ input[type="text"] {
-    min-width: 280px;
-    margin-bottom: 20px; }
-  #createQ #newQ input[type="radio"] {
-    margin-right: 20px; }
-  #createQ .buttons {
-    margin-top: 26px; }
+  padding-top: 5px; }
+  #createQ #newQ {
+    text-align: center; }
+    #createQ #newQ label {
+      font-size: 18px;
+      color: #373b3f; }
+    #createQ #newQ label.btn {
+      color: #eeeeee; }
+    #createQ #newQ .type label {
+      font-size: 14px; }
+    #createQ #newQ .type-container {
+      height: 70px; }
+    #createQ #newQ .question-type {
+      line-height: 35px;
+      margin-top: 10px; }
+    #createQ #newQ input[type="text"] {
+      border: 1px solid #3d468b;
+      width: 100%;
+      margin-bottom: 20px; }
+    #createQ #newQ input[type="radio"] {
+      margin-top: 10px;
+      margin-right: 20px; }
+    #createQ #newQ #label-left, #createQ #newQ #label-right, #createQ #newQ #label-middle {
+      font-size: 16px;
+      font-weight: normal; }
+    #createQ #newQ #label-left {
+      float: left; }
+    #createQ #newQ #label-middle {
+      position: relative;
+      right: 4px; }
+    #createQ #newQ #label-right {
+      float: right; }
+    #createQ #newQ #addBtn {
+      margin-bottom: 20px; }
+      #createQ #newQ #addBtn button {
+        width: 90px; }
+    #createQ #newQ .questionaire .type {
+      height: 70px; }
+    #createQ #newQ #navigation {
+      margin-bottom: 20px; }
+      #createQ #newQ #navigation button {
+        position: initial; }
+        #createQ #newQ #navigation button:first-of-type {
+          margin-right: 15px; }
+    #createQ #newQ #addQ button {
+      width: 100px; }
+      #createQ #newQ #addQ button:first-of-type {
+        margin-right: 15px; }
+  #createQ #stars {
+    position: relative;
+    top: 10px; }
+  #createQ #buttons {
+    position: relative;
+    top: 10px; }
   #createQ input {
     display: block;
     margin: 0 auto; }
+  #createQ #preview .preview-container {
+    padding: 0 7.5px;
+    margin-bottom: 15px; }
+  #createQ #preview .questionaire {
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #eeeeee;
+    padding: 20px;
+    border-radius: 10px; }
+    #createQ #preview .questionaire button {
+      width: 90px; }
+    #createQ #preview .questionaire #stars {
+      position: initial; }
+    #createQ #preview .questionaire .type {
+      margin-bottom: 10px; }
+    #createQ #preview .questionaire #textQ {
+      font-size: 16px; }
+    #createQ #preview .questionaire:hover {
+      cursor: pointer;
+      background-color: #ecdcc4; }
+  #createQ .alert-success {
+    text-align: center; }
+
+.questionaire .type {
+  height: 50px; }
 
 .questionaire #textQ {
+  word-break: break-word;
   font-size: 26px; }
 
 .questionaire #stars {
@@ -86,9 +162,6 @@
 
 .questionaire #buttons {
   padding-top: 5px; }
-
-.questionaire #stars, .questionaire #buttons {
-  height: 50px; }
 
 .questionaire #chart {
   margin-top: 50px; }
@@ -116,9 +189,6 @@ body {
   background-color: #95a3b3;
   padding: 20px; }
 
-#content {
-  text-align: center; }
-
 #logo {
   display: block;
   margin: 0 auto; }
@@ -139,3 +209,9 @@ h1, h2, h3, h4, h5, a {
   background-color: #eeeeee;
   color: #00bb59;
   border: 1px solid #00bb59; }
+
+.btn.btn-next-q {
+  box-sizing: border-box;
+  background-color: #eeeeee;
+  color: #00bb59;
+  border: 1px solid #007fba; }

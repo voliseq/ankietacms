@@ -1,5 +1,9 @@
 .questionaire{
+	.type{
+		height: 50px;
+	}
 	#textQ{
+		word-break: break-word;
 		font-size: 26px;
 	}
 	#stars{
@@ -15,10 +19,6 @@
 	#buttons{
 		padding-top: 5px;
 	}
-	#stars, #buttons{
-		height: 50px;
-	}
-
 	 //admin
 
 	 #chart{

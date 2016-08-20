@@ -10,6 +10,8 @@
 				margin-bottom: 20px;
 			}
 			#name{
+				margin-top: 5px;
+				text-align: center;
 				word-break: break-word;
 				padding-bottom: 35px;
 			}
@@ -17,6 +19,7 @@
 				width: 90px;
 			}
 			.button-row{
+				text-align: center;
 				a:first-of-type, button:first-of-type{
 					margin-right: 15px;
 				}

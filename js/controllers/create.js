@@ -4,6 +4,7 @@ var mainCtrl = app.controller('createCtrl', ['$scope','$compile','$http','checkT
 		text: '',
 		type: 0
 	};
+	$scope.questions = [];
 	$scope.success = false;
 	$scope.questionaire = {name: '', questions: [], active: 0};
 	$scope.confirm = function()
@@ -13,7 +14,6 @@ var mainCtrl = app.controller('createCtrl', ['$scope','$compile','$http','checkT
 		$scope.questionaire.questions = JSON.stringify($scope.questionaire.questions);
 		$http.post('api/site/post/create/',{
 			questionaire: $scope.questionaire,
-			questions: $scope.questions,
 			token: checkToken.raw()
 		}).success(function(data){
 			$scope.success = true;
@@ -51,6 +51,12 @@ var mainCtrl = app.controller('createCtrl', ['$scope','$compile','$http','checkT
 
 	$scope.addQ = function(question){
 		$scope.questionaire.questions[$scope.position] = $scope.question;
+		console.log($scope.questionaire);
+	}
+
+	$scope.setPosition = function(position){
+		$scope.position = position;
+		$scope.question = $scope.questionaire.questions[$scope.position];
 	}
 
 	// angular ui

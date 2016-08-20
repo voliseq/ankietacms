@@ -1,19 +1,112 @@
 #createQ{
+	padding-top: 5px;
 	#newQ{
+		text-align: center;
+		label{
+			font-size: 18px;
+			color: $darkText;
+		}
+		label.btn{
+			color: $whiteText;
+		}
+		.type label{
+			font-size: 14px;
+		}
+		.type-container{
+			height: 70px;
+		}
+		.question-type{
+			line-height: 35px;
+			margin-top: 10px;
+		} 
 		input[type="text"]{
-			min-width: 280px;
+			border: 1px solid #3d468b;
+			width: 100%;
 			margin-bottom: 20px;
 		}
 		input[type="radio"]{
+			margin-top: 10px;
 			margin-right: 20px;
 		}
+		#label-left,#label-right,#label-middle{
+			font-size: 16px;
+			font-weight: normal;
+		}
+		#label-left{float: left;}
+		#label-middle{
+			position: relative;
+			right: 4px;
+		}
+		#label-right{float: right;}
+		#addBtn{
+			button{width: 90px;}
+			margin-bottom: 20px;
+		}
+		.questionaire{
+			.type{
+				height: 70px;
+			}
+		}
+		#navigation{
+			button{
+				position: initial;
+				&:first-of-type{
+					margin-right: 15px;
+				}
+			}
+			margin-bottom: 20px;
+		}
+		#addQ button{
+			width: 100px;
+			&:first-of-type{
+				margin-right: 15px;
+			}
+		}
 	}
-	.buttons{
-		margin-top: 26px;
+	#stars{
+		position: relative;
+		top: 10px;
+	}
+	#buttons{
+		position: relative;
+		top: 10px;
 	}
 	input{
 		display: block;
 		margin: 0 auto;
 	}
-	text-align: center;
+
+	#preview{
+		.preview-container{
+			padding: 0 7.5px;
+			margin-bottom: 15px;
+		}
+		.questionaire{
+			box-sizing: border-box;
+			text-align: center;
+			background-color: $whiteBg;
+			padding: 20px;
+			border-radius: 10px;
+			button{
+				width: 90px;
+			}
+			#stars{
+				position: initial;
+			}
+			.type{
+				margin-bottom: 10px;
+			}
+			#textQ{
+				font-size: 16px;
+			}
+			&:hover{
+				cursor: pointer;
+				background-color: #ecdcc4;
+			}
+		}
+	}
+	.alert-success{
+		text-align: center;
+	}
+	
 }

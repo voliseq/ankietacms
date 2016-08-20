@@ -8,23 +8,23 @@
 		margin-right: 0;
 	}
 	#sad{
-		color: #f14b4b;
+		color: $sadFace;
 		&:hover{
-			color: #c84646
+			color: $sadFaceHover;
 		}
 
 	}
 
 	#ok{
-		color: #18c842;
+		color: $okFace;
 		&:hover{
-			color: #15b13a;
+			color: $okFaceHover;
 		}
 	}
 	#neutral{
-		color: #bebec0;
+		color: $neutralFace;
 		&:hover{
-			color: #7b7b7c;
+			color: $neutralFaceHover;
 		}
 	}
 }
