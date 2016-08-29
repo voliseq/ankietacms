@@ -1,6 +1,6 @@
-var loginCtrl = app.controller('loginCtrl', ['$scope', '$http','store', 'checkToken', '$location' ,'$state', function($scope, $http, store, checkToken, $location, $state){
+var loginCtrl = app.controller('loginCtrl', ['$scope', '$http','store', 'checkToken','$state', function($scope, $http, store, checkToken,  $state){
 	if ( checkToken.loggedIn()){
-		$location.path( '/admin' );
+		$state.go('admin');
 	}
 	$scope.user = {};
 	$scope.formSubmit = function ( user ) {
@@ -15,7 +15,7 @@ var loginCtrl = app.controller('loginCtrl', ['$scope', '$http','store', 'checkTo
 		if ( !data.error )
 		{
 			store.set( 'token' , data.token );
-			$state.go('admin');
+			window.location.reload();
 		}
 		
 	}).error( function(){

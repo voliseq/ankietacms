@@ -101,6 +101,7 @@ public function vote()
 public function fakeUpdate()
 {
 		$votes = $this->input->post('votes');
+		$votes['posttime'] = time();
 		$output = $this->Post_model->fakeVote($votes);
 		echo json_encode($output);
 
@@ -133,7 +134,14 @@ public function getVotes($idQ)
 	{
 		$output = $this->Post_model->getVotes($idQ);
 	}
+public function getVotesBetweenDates($idQ)
+	{
+		$dateStart = $this->input->get('dateStart');
+		$dateEnd = $this->input->get('dateEnd');
+		$output = $this->Post_model->getVotesBetweenDates($idQ, $dateStart, $dateEnd);
+	}
 }
+
 
 /* End of file Post.php */
 /* Location: ./application/controllers/Post.php */

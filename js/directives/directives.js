@@ -19,3 +19,16 @@ app.directive('faces', function () {
         replace: true
     }
 });
+app.directive('calendar', function () {
+    return {
+        restrict: 'E',
+        templateUrl: 'js/directives/partials/calendar.html',
+        replace: true,
+        scope: {
+            a: "=",
+            b: "=",
+            c: "=",
+            d: "="
+        }
+    }
+});

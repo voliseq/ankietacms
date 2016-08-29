@@ -1,14 +1,16 @@
-<div class="col-xs-12 col-sm-4 col-md-4 questionaire-item"  ng-repeat="questionaire in questionaires track by $index">
-	<div class="item-container">
-		<h2 id="name">{{questionaire.name}}</h2>
-		<div class="row button-row" id="first-row">
-			<a ui-sref="admin.questionaire({id: questionaire.id})" class="btn btn-primary">Wyświetl</a>
-			<a ui-sref="admin.questionaire({id: questionaire.id})" class="btn btn-warning">Wyświetl</a>
-		</div>
-		<div class="row button-row" id="second-row">
-			<button class="btn btn-active-q" ng-if="questionaire.active == '1'">Aktywna</button>
-			<button class="btn btn-success" ng-if="questionaire.active == '0'" ng-click="activate(questionaire.id, $index)">Aktywuj</button>
-			<button class="btn btn-danger" ng-click="delete(questionaire.id, $index)">Usuń</button>
+<div class="row">
+	<div class="col-xs-12 col-sm-4 col-md-4 questionaire-item"  ng-repeat="questionaire in questionaires track by $index">
+		<div class="item-container">
+			<h2 id="name">{{questionaire.name}}</h2>
+			<div class="row button-row" id="first-row">
+				<a ui-sref="admin.questionaire({id: questionaire.id})" class="btn btn-primary">Wyświetl</a>
+				<a ui-sref="admin.questionaire({id: questionaire.id})" class="btn btn-warning">Wyświetl</a>
+			</div>
+			<div class="row button-row" id="second-row">
+				<button class="btn btn-active-q" ng-if="questionaire.active == '1'">Aktywna</button>
+				<button class="btn btn-success" ng-if="questionaire.active == '0'" ng-click="activate(questionaire.id, $index)">Aktywuj</button>
+				<button class="btn btn-danger" ng-click="delete(questionaire.id, $index)">Usuń</button>
+			</div>
 		</div>
 	</div>
 </div>

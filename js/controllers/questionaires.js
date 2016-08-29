@@ -1,4 +1,9 @@
-var questionairesCtrl = app.controller('questionairesCtrl', ['$scope','$http', 'questions', 'dataService', function($scope, $http, questions, dataService){
+var questionairesCtrl = app.controller('questionairesCtrl', ['$scope','$http', 'questions', 'dataService','checkToken', '$state',  function($scope, $http, questions, dataService, checkToken, $state){
+
+	var isLogged = checkToken.loggedIn();
+	if (!isLogged){
+		$state.go( 'login' );
+	}
 
 	$scope.questionaires = questions.data;
 	console.log($scope.questionaires);

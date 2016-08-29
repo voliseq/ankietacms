@@ -4,17 +4,17 @@
 app.service( 'checkToken' , [ 'store' , 'jwtHelper', function( store , jwtHelper) {
 
 	var token = store.get( 'token' );
-	var time = store.get('time');
+	console.log(token);
 	if ( token )
 		token = jwtHelper.decodeToken( token );
 	else
 		token = false;
-
 	this.payload = function () {
 		return token;
 	};
 
 	this.loggedIn = function () {
+		console.log(token);
 		if ( token )
 			return true;
 		else
@@ -39,9 +39,6 @@ app.service( 'checkToken' , [ 'store' , 'jwtHelper', function( store , jwtHelper
 	this.getTime = function()
 	{
 		return time;
-	};
-	this.userName = function(){
-		console.log("aa");
 	};
 
 }]);

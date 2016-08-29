@@ -1,5 +1,8 @@
-var adminCtrl = app.controller('adminCtrl', ['$scope', '$http','store', 'checkToken', '$location', function($scope, $http, store, checkToken, $location){
-	if ( !checkToken.loggedIn()){
-		$location.path( '/login' );
+var adminCtrl = app.controller('adminCtrl', ['$scope', '$http','store', 'checkToken', '$state', function($scope, $http, store, checkToken, $state){
+	var isLogged = checkToken.loggedIn();
+	if (!isLogged){
+		console.log(isLogged);
+		$state.go( 'login' );
 	}
+
 }]);

@@ -1,0 +1,57 @@
+#resultsQ{
+	#calendars-row{
+		border-radius: 5px;
+		margin-bottom: 15px;
+		#calendars{
+			p{
+				border-radius: 4px;
+				padding-top: 5px;
+				font-size: 20px;
+				font-weight: bold;
+			}
+		#actualization{
+			height: 27px;
+			padding-top: 3px;
+    		margin-top: 5px;
+		}
+	}
+
+	height: 40px;
+	background-color: $whiteBg;
+		input{
+			height: 27px;
+			padding-top: 6px;
+		}
+		.input-group{
+			margin-bottom: 0px;
+			padding-top: 6px;
+		}
+	}
+	#charts-row{
+		.chart-container{
+			padding: 0 7.5px !important;
+		}
+		.chart-container div{
+			position: relative;
+			p{
+				font-size: 18px;
+			}
+			#percent{
+				position: absolute;
+			    left: 38px;
+			    top: 30px;
+			    font-weight: bold;
+			}
+			text-align: center;
+			padding: 20px;
+			background-color: $whiteBg;
+			border-radius: 4px;
+		}
+		.chart-container div canvas{
+			margin: 0 auto;
+			width: 95% !important;
+			height: auto !important;
+		}
+	}
+}
+

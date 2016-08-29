@@ -29,7 +29,8 @@
   border: none; }
   .navbar.navbar-default .navbar-brand {
     color: #eeeeee;
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: 24px; }
   .navbar.navbar-default li a, .navbar.navbar-default li.active a, .navbar.navbar-default li a:hover, .navbar.navbar-default li.active a:focus {
     color: #eeeeee; }
 
@@ -40,6 +41,9 @@
 
 .navbar-nav > li:hover {
   background-color: #30386e; }
+
+.navbar {
+  margin-bottom: 15px; }
 
 #faces a {
   cursor: pointer;
@@ -185,6 +189,49 @@
   #navigation #next {
     left: 50.5%; }
 
+#resultsQ #calendars-row {
+  border-radius: 5px;
+  margin-bottom: 15px;
+  height: 40px;
+  background-color: #eeeeee; }
+  #resultsQ #calendars-row #calendars p {
+    border-radius: 4px;
+    padding-top: 5px;
+    font-size: 20px;
+    font-weight: bold; }
+  #resultsQ #calendars-row #calendars #actualization {
+    height: 27px;
+    padding-top: 3px;
+    margin-top: 5px; }
+  #resultsQ #calendars-row input {
+    height: 27px;
+    padding-top: 6px; }
+  #resultsQ #calendars-row .input-group {
+    margin-bottom: 0px;
+    padding-top: 6px; }
+
+#resultsQ #charts-row .chart-container {
+  padding: 0 7.5px !important; }
+
+#resultsQ #charts-row .chart-container div {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  background-color: #eeeeee;
+  border-radius: 4px; }
+  #resultsQ #charts-row .chart-container div p {
+    font-size: 18px; }
+  #resultsQ #charts-row .chart-container div #percent {
+    position: absolute;
+    left: 38px;
+    top: 30px;
+    font-weight: bold; }
+
+#resultsQ #charts-row .chart-container div canvas {
+  margin: 0 auto;
+  width: 95% !important;
+  height: auto !important; }
+
 body {
   background-color: #95a3b3;
   padding: 20px; }
@@ -193,7 +240,7 @@ body {
   display: block;
   margin: 0 auto; }
 
-h1, h2, h3, h4, h5, a {
+h1, h2, h3, h4, h5, a, p {
   font-family: 'Source Sans Pro', sans-serif; }
 
 @media (max-width: 640px) {

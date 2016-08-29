@@ -21,4 +21,7 @@ app.service('dataService', ['$http', function($http) {
   this.deleteQ = function(id){
     return $http.get('api/site/post/delete/' +id);
   }
+  this.getVotesBetweenDates = function(id, dateStart, dateEnd){
+    return $http.get('api/site/post/getVotesBetweenDates/' + id+"?dateStart="+dateStart+"&dateEnd="+dateEnd);
+  }
 }]);

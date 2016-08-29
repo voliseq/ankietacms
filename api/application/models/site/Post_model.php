@@ -102,6 +102,15 @@ class Post_model extends CI_Model {
 		$q = $q->result();
 		echo json_encode($q);
 	}
+	public function getVotesBetweenDates($idQ, $dateStart, $dateEnd){
+
+		$this->db->where('idQ', $idQ);
+		$this->db->where('posttime >=', $dateStart/1000);
+		$this->db->where('posttime <=', $dateEnd/1000);
+		$q = $this->db->get('votes');
+		$q = $q->result();
+		echo json_encode($q);
+	}
 	public function fakeVote($votes)
 	{
 		$this->db->insert('votes', $votes);

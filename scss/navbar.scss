@@ -4,6 +4,7 @@
 	.navbar-brand{
 		color: $whiteText;
 		font-weight: bold;
+		font-size: 24px;
 	}
 	li a, li.active a, li a:hover, li.active a:focus{
 		color: $whiteText;
@@ -16,4 +17,7 @@
 }
 .navbar-nav>li:hover{
 	background-color: #30386e;
+}
+.navbar{
+	margin-bottom: 15px;
 }

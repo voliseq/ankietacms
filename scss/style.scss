@@ -14,7 +14,7 @@ $okFaceHover: #15b13a;
 @import 'create';
 @import 'questionaire';
 @import 'navigation';
-
+@import 'results';
 //general
 
 body{
@@ -25,7 +25,7 @@ body{
 	display: block;
 	margin: 0 auto;
 }
-h1,h2,h3,h4,h5,a{
+h1,h2,h3,h4,h5,a,p{
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
