@@ -33,6 +33,16 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlR
 			templateUrl: 'partials/admin/create.html',
 			controller: 'createCtrl'
 		})
+		.state('admin.edit',{
+			url: '/edit/:id',
+			templateUrl: 'partials/admin/edit.html',
+			controller: 'editCtrl',
+			resolve: {
+				questionaire: ['dataService', '$stateParams', function(dataService, $stateParams){
+					return dataService.getQuestionaire($stateParams.id);
+				}]
+			}			
+		})
 		.state('admin.questionaires',{
 			url: '/questionaires',
 			templateUrl: 'partials/admin/questionaires.html',

@@ -98,6 +98,7 @@ public function vote()
 
 		echo json_encode($output);	
 }
+// głosowanie uzytkownika
 public function fakeUpdate()
 {
 		$votes = $this->input->post('votes');
@@ -139,6 +140,13 @@ public function getVotesBetweenDates($idQ)
 		$dateStart = $this->input->get('dateStart');
 		$dateEnd = $this->input->get('dateEnd');
 		$output = $this->Post_model->getVotesBetweenDates($idQ, $dateStart, $dateEnd);
+	}
+public function updateQ($idQ)
+	{
+		$token = $this->input->post('token');
+		$token = json_decode(json_encode($token), true);
+		$questionaire = $this->input->post('questionaire');
+		$output = $this->Post_model->updateQ($idQ, $questionaire);
 	}
 }
 

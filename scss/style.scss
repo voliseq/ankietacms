@@ -16,9 +16,14 @@ $okFaceHover: #15b13a;
 @import 'navigation';
 @import 'results';
 //general
+.admin-bg{
+	background-color: $bodyBg;
+}
+.user-bg{
+	background-color: #EEEEEE;
+}
 
 body{
-	background-color: $bodyBg;
 	padding: 20px;
 }
 #logo{

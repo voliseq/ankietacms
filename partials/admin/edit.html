@@ -1,0 +1,50 @@
+<form ng-submit="confirm()">
+	<div id="createQ">
+		<div class="row">
+			<div id="newQ" class="col-md-4">
+				<i class="fa fa-check" ng-if="added[position]" aria-hidden="true"></i>
+				<label for = "name">Nazwa ankiety </label>
+				<input type="text" name = "name" required ng-model="questionaire.name">
+				<label for="text">Tekst pytania</label>
+				<input type="text" name="text" required ng-model="question.text">
+				<label class="question-type" id="label-left" ><input type="radio" ng-model="question.type" ng-value="0">Gwiazdki</label>
+				<label class="question-type" id="label-middle">
+					<input type="radio" ng-model="question.type" ng-value="1">Tak/Nie
+				</label>
+				<label class="question-type" id="label-right"><input type="radio" ng-model="question.type" ng-value="2">Buźki</label>
+				<div class="row" id="addBtn">
+					<button type="button" ng-click="addQ(question)"class=" btn btn-info">Nadpisz</button>
+				</div>
+				<div class="questionaire">
+					<p id="textQ">{{question.text}}</p>
+					<div class="type-container">
+						<stars class="type" ng-if="question.type == 0"></stars>
+						<buttonki class="type" ng-if="question.type == 1" ></buttonki>
+						<faces class="type" ng-if="question.type == 2" ></faces>	
+					</div>
+				</div>
+
+				<div id="navigation" class="row">
+					<button type="button" id="prev" ng-click="previousQ()" class = "btn btn-warning">Poprzednie</button>
+					<button type="button" id="next" ng-click="nextQ()" class = "btn btn-primary">Nastepne</button>
+				</div>
+				<div class="row" id="addQ">
+					<button class="btn btn-success">Edytuj</button>
+					<button class="btn btn-danger">Usuń</button>
+				</div>
+			</div>
+			<div id="preview" class="col-md-8">
+				<div class="col-md-6 preview-container" ng-repeat = "q in questionaire.questions track by $index">
+					<div class="questionaire" ng-click="setPosition($index)" >
+						<p id="textQ">{{q.text}}</p>
+						<stars class="type" ng-if="q.type == 0"></stars>
+						<faces class="type" ng-if="q.type == 2"></faces>
+						<buttonki class="type" ng-if="q.type == 1"></buttonki>
+						<button class="btn btn-danger">Usuń</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h2 class="alert alert-success" ng-if="success">Edycja zakończona powodzeniem !</h2>
+	</div>
+</form>

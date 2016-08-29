@@ -75,26 +75,6 @@ class Post_model extends CI_Model {
 		$q = $q->result();
 		echo json_encode($q);
 		}
-	public function getUserPosts($userId, $id = false){
-		if($id == false)
-		{
-			$q = $this->db->get('zapytuj_posts');
-			$q = $q->result();
-		}
-		else
-		{
-			if($id == 1)
-				$offset = 0;
-			else
-				$offset = ($id-1) * 10;
-
-			$this->db->where('userId', $userId);
-			$this->db->order_by('id', 'desc');
-			$q = $this->db->get('zapytuj_posts',10,$offset);
-			$q = $q->result();
-		}
-		echo json_encode($q);
-	}
 	public function getVotes($idQ){
 
 		$this->db->where('idQ', $idQ);
@@ -117,7 +97,13 @@ class Post_model extends CI_Model {
 		$output['success'] = true;
 		return $output;
 	}
-
+	public function updateQ($idQ, $questionaire){
+		var_dump($questionaire);
+		$this->db->where('id', $idQ);
+		$this->db->update('questionaires', $questionaire);
+		$output['success'] = true;
+		echo json_encode($output);
+	}
 
 
 

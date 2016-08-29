@@ -4,7 +4,7 @@
 			<h2 id="name">{{questionaire.name}}</h2>
 			<div class="row button-row" id="first-row">
 				<a ui-sref="admin.questionaire({id: questionaire.id})" class="btn btn-primary">Wyświetl</a>
-				<a ui-sref="admin.questionaire({id: questionaire.id})" class="btn btn-warning">Wyświetl</a>
+				<a ui-sref="admin.edit({id: questionaire.id})" class="btn btn-warning">Edytuj</a>
 			</div>
 			<div class="row button-row" id="second-row">
 				<button class="btn btn-active-q" ng-if="questionaire.active == '1'">Aktywna</button>
