@@ -1,3 +1,57 @@
+// questionaire for user
+#questionaire-container{
+		.questionaire-live{
+			text-align: center;
+		#textQ{
+			font-size: 28px;
+		}
+		#navigation{
+			position: relative;
+			button{
+				width: 100px;
+			}
+			#prev, #next, #send{
+				position: absolute;
+			}
+			#prev{
+				left: calc(50.5% - 105px);
+			}
+			#next, #send{
+				left: 50.5%;
+			}
+			margin-top: 10px;
+		}
+		 #stars{
+		 	cursor: pointer;
+		 	font-size: 40px;
+		 	span{
+		 		outline: none;
+		 	}
+		 	i{
+		 		color: #efb023;
+		 	}
+		 }
+		 #buttons{
+		 	padding-top: 5px;
+		 }
+		 #stars, #buttons{
+		 	height: 50px;
+		 }
+		 #faces{
+		 	height: 70px;
+		 }
+
+		 //admin
+
+		 #chart{
+		 	margin-top: 50px;
+		 }
+
+	}
+}
+
+
+// questionaire for admin
 .questionaire{
 	.type{
 		height: 50px;

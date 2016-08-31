@@ -4,7 +4,7 @@
 		text-decoration: none;
 		margin-right: 40px;
 	}
-	a:last-of-type{
+	a:last-of-type, &.active{
 		margin-right: 0;
 	}
 	#sad{
@@ -17,13 +17,13 @@
 
 	#ok{
 		color: $okFace;
-		&:hover{
+		&:hover, &.active{
 			color: $okFaceHover;
 		}
 	}
 	#neutral{
 		color: $neutralFace;
-		&:hover{
+		&:hover, &.active{
 			color: $neutralFaceHover;
 		}
 	}

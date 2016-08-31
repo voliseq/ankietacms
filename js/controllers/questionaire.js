@@ -25,8 +25,13 @@ var questionaireCtrl = app.controller('questionaireCtrl', ['$scope','$http', 'qu
 		$scope.votes.votes[i] = $scope.rating.rate;
 	};
 	// buttons
-	$scope.voteQ = function(){
+	$scope.voteQ = function(obj = false){
+		if(obj){
+			$scope.rating.rate = parseInt(obj.target.attributes.value.value);
+		}
 		$scope.votes.votes[$scope.position] = $scope.rating.rate;
+		console.log($scope.rating);
+		console.log($scope.votes.votes);
 	}
 	$scope.sendVote = function(){
 		$scope.voted = true;

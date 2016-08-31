@@ -13,6 +13,16 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlR
 				}]
 			}
 		})
+		.state('questionaireId',{
+			url: '/nr/:id',
+			templateUrl: 'partials/admin/questionaire.html',
+			controller: 'questionaireCtrl',
+			resolve: {
+				questions: ['dataService', '$stateParams', function(dataService, $stateParams){
+					return dataService.getQuestionaire($stateParams.id);
+				}]
+			}
+		})
 		.state('login',{
 			url: '/login',
 			templateUrl: 'partials/admin/login.html',

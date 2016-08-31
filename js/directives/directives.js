@@ -16,7 +16,10 @@ app.directive('faces', function () {
     return {
         restrict: 'E',
         templateUrl: 'js/directives/partials/faces.html',
-        replace: true
+        replace: true,
+        scope:{
+            rate: "="
+        }
     }
 });
 app.directive('calendar', function () {

@@ -50,7 +50,7 @@
   text-decoration: none;
   margin-right: 40px; }
 
-#faces a:last-of-type {
+#faces a:last-of-type, #faces.active {
   margin-right: 0; }
 
 #faces #sad {
@@ -60,12 +60,12 @@
 
 #faces #ok {
   color: #18c842; }
-  #faces #ok:hover {
+  #faces #ok:hover, #faces #ok.active {
     color: #15b13a; }
 
 #faces #neutral {
   color: #bebec0; }
-  #faces #neutral:hover {
+  #faces #neutral:hover, #faces #neutral.active {
     color: #7b7b7c; }
 
 #createQ {
@@ -148,6 +148,37 @@
       background-color: #ecdcc4; }
   #createQ .alert-success {
     text-align: center; }
+
+#questionaire-container .questionaire-live {
+  text-align: center; }
+  #questionaire-container .questionaire-live #textQ {
+    font-size: 28px; }
+  #questionaire-container .questionaire-live #navigation {
+    position: relative;
+    margin-top: 10px; }
+    #questionaire-container .questionaire-live #navigation button {
+      width: 100px; }
+    #questionaire-container .questionaire-live #navigation #prev, #questionaire-container .questionaire-live #navigation #next, #questionaire-container .questionaire-live #navigation #send {
+      position: absolute; }
+    #questionaire-container .questionaire-live #navigation #prev {
+      left: calc(50.5% - 105px); }
+    #questionaire-container .questionaire-live #navigation #next, #questionaire-container .questionaire-live #navigation #send {
+      left: 50.5%; }
+  #questionaire-container .questionaire-live #stars {
+    cursor: pointer;
+    font-size: 40px; }
+    #questionaire-container .questionaire-live #stars span {
+      outline: none; }
+    #questionaire-container .questionaire-live #stars i {
+      color: #efb023; }
+  #questionaire-container .questionaire-live #buttons {
+    padding-top: 5px; }
+  #questionaire-container .questionaire-live #stars, #questionaire-container .questionaire-live #buttons {
+    height: 50px; }
+  #questionaire-container .questionaire-live #faces {
+    height: 70px; }
+  #questionaire-container .questionaire-live #chart {
+    margin-top: 50px; }
 
 .questionaire .type {
   height: 50px; }

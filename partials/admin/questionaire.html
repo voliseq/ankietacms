@@ -1,23 +1,25 @@
-<div class="questionaire col-xs-12 col-md-6 col-md-offset-3">
-	<img src="img/diamed-logo.png" id="logo">
-	<p id="textQ">{{textQ}}</p>
-	<div id="stars" ng-if="!typeQ" ng-click="voteQ()">
- 		<span uib-rating ng-model="rating.rate" max="rating.max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+<div id="questionaire-container" class="rows">
+	<div class="questionaire-live col-xs-12 col-md-6 col-md-offset-3">
+		<img src="img/diamed-logo.png" id="logo">
+		<p id="textQ">{{textQ}}</p>
+		<div id="stars" ng-if="!typeQ" ng-click="voteQ()">
+	 		<span uib-rating ng-model="rating.rate" max="rating.max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+		</div>
+		<div id="buttons" ng-if="typeQ == 1" ng-click="voteQ()">
+	        <label class="btn btn-primary" ng-model="rating.rate" uib-btn-radio="1">Tak</label>
+	        <label class="btn btn-primary" ng-model="rating.rate" uib-btn-radio="0">Nie</label>
+		</div>
+		<div id="faces" ng-if="typeQ == 2">
+			<a class="fa fa-smile-o fa-5x"  ng-click="voteQ($event)" id="ok" ng-class="{active: rating.rate == 1 }" value = "1" aria-hidden="true" ng-model="rating.rate"></a><!--
+			-->
+			<a class="fa fa-meh-o fa-5x"  ng-click="voteQ($event)" id="neutral" ng-class="{active: rating.rate == 2 }" aria-hidden="true" value="2" ng-model="rating.rate"></a><!--
+			--><a class="fa fa-frown-o fa-5x"  ng-click="voteQ($event)" id="sad" ng-class="{active: rating.rate == 0 }" aria-hidden="true" value="0" ng-model="rating.rate"></a>
+		</div>
+		<div ng-if="!voted" id="navigation" class="row">
+			<button id="prev" ng-if="position" id="previous" ng-click="previousQ()" class = "btn btn-warning">Poprzednie</button>
+			<button id="next" ng-if="nextt" ng-click="nextQ()" class = "btn btn-primary">Nastepne</button>
+			<button id="send" ng-if="!nextt && !voted" ng-click="sendVote()" class="btn btn-success">Wyślij</button>
+		</div>
+		<h2 id="opinion" ng-if="voted" class="alert alert-success">Dziękujemy za opinię !</h2>
 	</div>
-	<div id="buttons" ng-if="typeQ == 1" ng-click="voteQ()">
-        <label class="btn btn-primary" ng-model="rating.rate" uib-btn-radio="1">Tak</label>
-        <label class="btn btn-primary" ng-model="rating.rate" uib-btn-radio="0">Nie</label>
-	</div>
-	<div id="faces" ng-if="typeQ == 2">
-		<a class="fa fa-smile-o fa-5x" id="ok" aria-hidden="true" value = "2"></a><!--
-		-->
-		<a class="fa fa-meh-o fa-5x" id="neutral" aria-hidden="true" value = "1"></a><!--
-		--><a class="fa fa-frown-o fa-5x" id="sad" aria-hidden="true" value = "0"></a>
-	</div>
-	<div ng-if="!voted" id="navigation" class="row">
-		<button id="prev" ng-if="position" id="previous" ng-click="previousQ()" class = "btn btn-warning">Poprzednie</button>
-		<button id="next" ng-if="nextt" ng-click="nextQ()" class = "btn btn-primary">Nastepne</button>
-		<button id="send" ng-if="!nextt && !voted" ng-click="sendVote()" class="btn btn-success">Wyślij</button>
-	</div>
-	<h2 id="opinion" ng-if="voted" class="alert alert-success">Dziękujemy za opinię !</h2>
 </div>

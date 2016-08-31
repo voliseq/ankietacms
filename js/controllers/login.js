@@ -1,5 +1,6 @@
 var loginCtrl = app.controller('loginCtrl', ['$scope', '$http','store', 'checkToken','$state', function($scope, $http, store, checkToken,  $state){
 	if ( checkToken.loggedIn()){
+		console.log("elo");
 		$state.go('admin');
 	}
 	$scope.user = {};
@@ -11,7 +12,7 @@ var loginCtrl = app.controller('loginCtrl', ['$scope', '$http','store', 'checkTo
 	}).success( function( data ){	
 		$scope.submit = true;	
 		$scope.error = data.error;
-		
+		console.log(data);
 		if ( !data.error )
 		{
 			store.set( 'token' , data.token );
