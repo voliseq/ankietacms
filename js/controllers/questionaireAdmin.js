@@ -7,7 +7,6 @@ var questionaireAdminCtrl = app.controller('questionaireAdminCtrl', ['$scope','$
 
 
 	// init
-	console.log(questionaire);
 	$scope.questionaire = questionaire.data[0];
 	$scope.questionaire.questions = JSON.parse($scope.questionaire.questions);
 	$scope.votesQ = votes.data;
