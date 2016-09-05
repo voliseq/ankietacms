@@ -1,6 +1,5 @@
 var loginCtrl = app.controller('loginCtrl', ['$scope', '$http','store', 'checkToken','$state', function($scope, $http, store, checkToken,  $state){
 	if ( checkToken.loggedIn()){
-		console.log("elo");
 		$state.go('admin');
 	}
 	$scope.user = {};
